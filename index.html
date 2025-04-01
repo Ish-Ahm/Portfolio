@@ -5,15 +5,42 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Portfolio</title>
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { text-align: center; background: #f0f0f0; }
-        .container { width: 100vw; height: 100vh; overflow-x: hidden; overflow-y: auto; }
-        img { width: 100%; height: auto; display: block; }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Prevent right-click on the entire page */
+        body {
+            user-select: none; /* Prevent text/image selection */
+        }
+
+        /* Full-page scrolling container */
+        .portfolio-container {
+            width: 100vw;
+            height: 100vh;
+            overflow-y: scroll; /* Enables vertical scrolling */
+            background-image: url('assets/portfolio.png'); /* Update path if needed */
+            background-size: contain; /* Ensures full image is visible */
+            background-repeat: no-repeat;
+            background-position: top center;
+            background-attachment: local; /* Allows normal scrolling */
+        }
+
+        /* Disable right-click */
+        body, .portfolio-container {
+            pointer-events: none; /* Prevents interaction with the image */
+        }
     </style>
+    <script>
+        // Disable right-click on the entire page
+        document.addEventListener("contextmenu", function(event) {
+            event.preventDefault();
+        });
+    </script>
 </head>
 <body>
-    <div class="container">
-        <img src="portfolio-design.png" alt="My Portfolio">
-    </div>
+    <div class="portfolio-container"></div>
 </body>
 </html>
