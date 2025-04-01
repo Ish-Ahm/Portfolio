@@ -11,36 +11,37 @@
             box-sizing: border-box;
         }
 
-        /* Prevent right-click on the entire page */
         body {
-            user-select: none; /* Prevent text/image selection */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #f0f0f0;
         }
 
-        /* Full-page scrolling container */
         .portfolio-container {
-            width: 100vw;
-            height: 100vh;
-            overflow-y: scroll; /* Enables vertical scrolling */
-            background-image: url('assets/portfolio.png'); /* Update path if needed */
-            background-size: contain; /* Ensures full image is visible */
-            background-repeat: no-repeat;
-            background-position: top center;
-            background-attachment: local; /* Allows normal scrolling */
+            width: 100%;
+            max-width: 1440px; /* Adjust to your design width */
+            height: auto;
+            text-align: center;
         }
 
-        /* Disable right-click */
-        body, .portfolio-container {
-            pointer-events: none; /* Prevents interaction with the image */
+        /* Make the image scrollable */
+        img {
+            width: 100%;
+            height: auto;
+            display: block;
         }
     </style>
     <script>
-        // Disable right-click on the entire page
-        document.addEventListener("contextmenu", function(event) {
+        // Disable right-click on the image
+        function disableRightClick(event) {
             event.preventDefault();
-        });
+        }
     </script>
 </head>
 <body>
-    <div class="portfolio-container"></div>
+    <div class="portfolio-container">
+        <img src="assets/portfolio.png" alt="My Portfolio" oncontextmenu="disableRightClick(event)">
+    </div>
 </body>
 </html>
