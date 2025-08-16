@@ -1,47 +1,134 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>My Portfolio</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            background-color: #f0f0f0;
-        }
-
-        .portfolio-container {
-            width: 100%;
-            max-width: 1440px; /* Adjust to your design width */
-            height: auto;
-            text-align: center;
-        }
-
-        /* Make the image scrollable */
-        img {
-            width: 100%;
-            height: auto;
-            display: block;
-        }
-    </style>
-    <script>
-        // Disable right-click on the image
-        function disableRightClick(event) {
-            event.preventDefault();
-        }
-    </script>
+    <link rel="stylesheet" href="styles.css" />
+    
+    <!-- Google Fonts link for Instrument Sans -->
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans&display=swap" rel="stylesheet">
 </head>
+
+
 <body>
-    <div class="portfolio-container">
-        <img src="portfolio-design.png" alt="My Portfolio" oncontextmenu="disableRightClick(event)">
-    </div>
+
+    <header>
+        <div class="header-container">
+            <img src="images/logo.png" alt="Logo" class="header-logo" />
+            <nav>
+                <ul class="nav-list">
+                    <li><a href="#aboutme">About Me</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Intro section with text and circular image -->
+        <section class="intro-section">
+            <div class="text-content">
+                <h2>Hi, my name is <span class="highlight">Ishaan Ahmed</span>.</h2>
+                <p>
+                    I am a student learning to be a graphic designer, UI/UX designer, 3D modeler and photo editor.
+                </p>
+                
+                <p>
+                    I am detail-oriented, dedicated to excellence, and passionate about exploring technological innovations and their impact on the world throughout history.        </p>
+                <p>
+            </div>
+
+            <div class="profile-image">
+                <img src="images/ishaan.png" alt="Ishaan Ahmed" />
+            </div>
+        </section>
+
+        <section class="about-me-section">
+            <div class="about-title">
+                ABOUT ME
+            </div>
+            
+            <div class="about-content">
+                <div class="about-content-skills">
+                    <h3>Skills</h3>
+                    <p>Graphic designing (Figma, Canva, Photoshop, Illustrator), 3D Modelling (Blender, Fusion 360, AutoCAD, SketchUp), Proficient in MS applications like Word and Excel.</p>
+                </div>
+
+                <div class="about-content-languages">
+                    <h3>Languages</h3>
+                    <p>Naturally fluent in English and Hindi, currently learning Dutch</p>
+                </div>
+            </div>
+        </section>
+
+
+        <section class="projects-section">
+            <h2 class="projects-title">PROJECTS</h2>
+            
+            <div class="project-category">
+                <h3>3D Modelling</h3>
+                <div class="project-gallery">
+                    <img src="images/3d/3d_1.png" alt="3D Model 1">
+                    <img src="images/3d/3d_2.png" alt="3D Model 2">
+                    <img src="images/3d/3d_3.png" alt="3D Model 3">
+                </div>
+            </div>
+            
+            <div class="project-category">
+                <h3>Fabrication Design</h3>
+                <div class="project-gallery">
+                    <img src="images/fab/fab_1.png" alt="Fabrication 1">
+                    <img src="images/fab/fab_2.png" alt="Fabrication 2">
+                    <img src="images/fab/fab_3.png" alt="Fabrication 3">
+                    <img src="images/fab/fab_4.png" alt="Fabrication 4">
+                </div>
+            </div>
+
+            <div class="project-category">
+                <h3>Pixel Art</h3>
+                <div class="project-gallery">
+                    <img src="images/pixel/pixel_1.png" alt="Pixel Art 1">
+                    <img src="images/pixel/pixel_2.png" alt="Pixel Art 2">
+                    <img src="images/pixel/pixel_3.png" alt="Pixel Art 3">
+                    <img src="images/pixel/pixel_4.png" alt="Pixel Art 4">
+                </div>
+            </div>
+        </section>
+
+        <section class="contact-section">
+            <div class="contact-title">
+                CONTACT ME
+            </div>
+
+            <form class="contact-form">
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" required placeholder="Your name">
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required placeholder="your@email.com">
+                </div>
+
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" rows="5" required placeholder="Type your message here"></textarea>
+                </div>
+                
+                <button type="submit">Send Message</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Ishaan Ahmed. All rights reserved.</p>
+    </footer>
+
+    <script src="app.js"></script>
+
 </body>
 </html>

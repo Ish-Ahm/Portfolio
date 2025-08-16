@@ -1,0 +1,600 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body base styles */
+body {
+    font-family: 'Instrument Sans', sans-serif;
+    line-height: 1.6;
+    background-color: #fafafa;
+    color: #333;
+    padding: 0px;
+    min-width: 320px; /* Prevents horizontal scroll on small screens */
+}
+
+
+/* -------- HEADER & NAVIGATION -------- */
+header {
+  background-color: #2A2A2A;
+  padding: 15px 0;
+  width: 100%;
+}
+
+.header-container {
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-left: 80px; /* space for logo */
+  display: flex;
+  justify-content: center; /* centers nav */
+  align-items: center;
+}
+
+.header-logo {
+  position: absolute;
+  left: 20px;  /* distance from left edge */
+  height: 40px; /* adjust as needed */
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+/* Change location of image when screen size small */
+@media (max-width: 800px) {
+  .header-logo {
+    display: block;
+    margin: 0 auto;  /* centers the image horizontally */
+    position: static; /* remove absolute positioning */
+    transform: none;  /* remove vertical translate */
+  }
+}
+
+.nav-list {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-list a {
+    font-family: 'Instrument Sans', sans-serif;
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.5rem;
+}
+
+.nav-list a:hover {
+    color: #FF8412;
+}
+
+/* Responsive nav */
+@media (max-width: 800px) {
+    .nav-list {
+        flex-direction: column;
+        gap: 15px;
+    }
+}
+
+
+/* -------- INTRO SECTION (Text + Circular Image) -------- */
+.intro-section {
+    display: flex;
+    align-items: center;
+    max-width: 1000px;
+    margin: 4rem auto;
+    font-family: 'Instrument Sans', sans-serif;
+    align-items: center;
+    gap: 1rem; 
+}
+
+.text-content {
+    flex: 1.5;
+    display: flex;
+    flex-direction: column;
+    margin-left: 3rem ;
+}
+
+.text-content h2 {
+    font-weight: 700;
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: #222;
+}
+
+.text-content p {
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+    font-weight: bolder;
+    text-align: left;
+    line-height: 2rem;
+    margin-right: 5rem;
+}
+
+/* Controls the gap between h2 and first p */
+.text-content h2 + p {
+    margin-top: 0.8rem;
+}
+
+.highlight {
+    color: #FF8412;
+}
+
+.profile-image {
+    width: 300px;
+    height: auto;
+    aspect-ratio: 1 / 1; /* Ensures the image is square */
+    display: flex;
+    justify-content: center;
+    /* Prevent anti-aliasing artifacts */
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    margin-bottom: 1rem;
+}
+
+.profile-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 100%;
+    border: 8px solid #2A2A2A;
+    transition: border-color 0.3s ease;
+    box-shadow: none;
+    background-clip: padding-box;
+}
+
+.profile-image:hover img {
+    border-color: #FF8412; /* orange on hover */
+}
+
+/* Responsive: stack vertically on small screens */
+@media (max-width: 800px) {
+    .intro-section {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .text-content h2 {
+        line-height: 1.2;
+        margin-bottom: rem;
+    }
+
+    .text-content p {
+        font-size: 0.9rem;
+        text-align: left;
+        margin-inline: 0;
+    }
+
+    .profile-image {
+        order: -1;
+        width: 300px;
+        height: 300px;
+    }
+
+    .profile-image img {
+        border: 8px solid #2A2A2A; /* thinner border on small screens */
+    }
+
+    .text-content {
+        order: 0;
+    }
+
+    .text-content h2 {
+        font-size: 2.5rem;
+        margin-top: 2rem;
+        margin-bottom: 0.8rem;
+    }
+    
+    .text-content p {
+        font-size: 1.5rem;
+        line-height: 1.3;
+        margin-inline: 4rem;
+    }
+}
+
+
+/* -------- ABOUT ME SECTION -------- */
+.about-me-section {
+    display: flex;
+    justify-content: center;
+    background-color: #2A2A2A; /* dark grey */
+    color: white;
+    width: 100vw;
+    margin: 40px 0;
+    padding: 40px 0;
+    font-family: 'Instrument Sans', sans-serif;
+    border-radius: 0;
+}
+
+/* Pixel-style font for ABOUT ME title */
+.about-me-section > .about-title {
+    font-family: 'Minecraft', sans-serif; /* pixel font */
+    font-size: 3rem;
+    color: #FF8412; /* orange */
+    text-shadow: 0px 4px 0px #000000;
+    letter-spacing: 2px;
+    white-space: nowrap;
+    align-self: center;
+    justify-content: flex-start;
+    display: flex;
+    height: 100%;
+    padding-left: 20px;
+}
+
+.about-me-section > .about-content {
+    max-width: 800px;
+    width: 80%;
+    padding: 0 30px;
+    padding-left: 100px;
+    box-sizing: border-box;
+    gap: 10px;
+    border-radius: 8px;
+    flex: 1;
+}
+
+.about-content h3 {
+    margin-top: 0;
+    font-weight: 700;
+    text-shadow: 0px 2px 2px #000000;
+    margin-bottom: 0.2rem;
+    font-size: 1.8rem;
+}
+
+.about-content p {
+    margin-top: 0;
+    font-weight: 400;
+    margin-bottom: 10px;
+    line-height: 1.5;
+    font-size: 1.2rem;
+}
+
+/* Controls the gap between h2 and first p */
+.about-content-skills + .about-content-languages {
+    margin-top: 2rem;
+}
+
+/* Responsive about me section */
+@media (max-width: 800px) {
+    .about-me-section {
+        flex-direction: column;
+        padding: 30px 30px;
+        gap:    0px;
+    }
+    
+    .about-title {
+        text-align: right;
+        font-size: 2.6rem;
+        margin-bottom: 10px;
+    }
+    
+    .about-content h3{
+        text-align: left;
+        padding-left: 0px;
+        width: 100%;
+    }
+
+    .about-content p {
+        text-align: left;
+        padding-left: 0;
+        width: 100%;
+    }
+}
+
+
+/* -------- PROJECTS SECTION -------- */
+.projects-section {
+    width: 100vw;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+.projects-section > .projects-title {
+    font-family: 'Minecraft', sans-serif;
+    font-size: 3rem;
+    font-weight: normal;
+    color: #000000;
+    text-shadow: 0px 2px 0px #fd7a00;
+    letter-spacing: 2px;
+    white-space: nowrap;
+    align-self: center;
+    justify-content: center;
+    display: flex;
+    height: 100%;
+    padding-left: 20px;
+    margin-bottom: 30px;
+}
+
+.project-title + .project-category {
+    gap: 2rem;
+}
+
+.projects-section > .project-category {
+    background: #222;
+    border-radius: 20px;
+    padding: 0.8rem 1.2rem 1.5rem 1.2rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+    max-width: 120%;
+}
+
+.project-category h3 {
+    color: #fff;
+    text-align: center;
+    font-size: 1.7rem;
+    margin-bottom: 1rem;
+    font-family: 'Instrument Sans', sans-serif;
+    font-weight: 700;
+}
+
+.project-category > .project-gallery {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.project-gallery img {
+    width: 300px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 12px;
+    background: #111;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.18);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.project-gallery img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 2rem rgba(255,132,18,0.50);
+}
+
+
+/* -------- CONTACT FORM SECTION -------- */
+.contact-section {
+    display: flex;
+    justify-content: center;
+    background-color: #2A2A2A; /* dark grey */
+    color: white;
+    width: flex;
+    margin: 40px 0;
+    padding: 40px 0;
+    font-family: 'Instrument Sans', sans-serif;
+    border-radius: 0;
+}
+
+/* Pixel-style font for CONTACT title */
+.contact-section > .contact-title {
+    font-family: 'Minecraft', sans-serif; /* pixel font */
+    font-size: 3rem;
+    color: #FF8412; /* orange */
+    text-shadow: 0px 4px 0px #000000;
+    letter-spacing: 2px;
+    white-space: nowrap;
+    align-self: center;
+    padding-right: 2rem;
+    justify-content: center;
+    height: 100%;
+    margin-left: 3rem;
+    margin-right: 3rem;
+}
+
+/* Controls the gap between h2 and first p */
+.contact-content h2 + .contact-content p {
+    margin-top: 2rem;
+}
+
+.contact-section > .contact-form {
+    width: 100%;
+    max-width: 600px;
+    min-width: 320px;
+    margin-right: 10px auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    background: #222;
+    padding: 2rem;
+    border-radius: 16px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.10);
+}
+
+.contact-form > .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.contact-form label {
+    color: #fff;
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 0.2rem;
+}
+
+.contact-form input,
+.contact-form textarea {
+    padding: 0.8rem 1rem;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-family: inherit;
+    background: #333;
+    color: #fff;
+    resize: vertical;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    outline: 2px solid #FF8412;
+    background: #222;
+}
+
+.contact-form button {
+    background: #FF8412;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 0.9rem 1.2rem;
+    font-size: 1.1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.contact-form button:hover {
+    background: #e06d00;
+}
+
+/* Responsive contact section */
+@media (max-width: 800px) {
+    .contact-section {
+        flex-direction: column;
+        align-items: center; /* Add this to center children horizontally */
+        padding: 30px 0;
+        gap: 0px;
+        width: 100vw;         /* Make it full viewport width */
+        margin: 0;            /* Remove any margin */
+        box-sizing: border-box;
+    }
+
+    .contact-form {
+        margin: 0 auto;      /* Add this to center the form */
+        max-width: 500px;    /* Optional: control max width on mobile */
+    }
+
+    .contact-title {
+        text-align: center;
+        font-size: 2.6rem;
+        margin-bottom: 10px;
+    }
+}
+
+
+/* -------- FOOTER -------- */
+footer {
+    text-align: center;
+    margin-top: 60px;
+    color: #777;
+    font-size: 0.9rem;
+}
+
+/* Utility classes */
+.hidden {
+    display: none;
+}
+
+
+
+
+/* ========= CUSTOM FONTS ========= */
+
+/* -------- MINECRAFT FONT -------- */
+@font-face {
+    font-family: 'Minecraft';
+    src: url('fonts/minecraft_font.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* -------- INSTRUMENT SANS STATIC FONTS -------- */
+@font-face {
+    font-family: 'Instrument Sans Condensed';
+    src: url('fonts/Instrument Sans/InstrumentSans_Condensed-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Instrument Sans Condensed';
+    src: url('fonts/Instrument Sans/InstrumentSans_Condensed-Bold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Instrument Sans Condensed';
+    src: url('fonts/Instrument Sans/InstrumentSans_Condensed-Italic.ttf') format('truetype');
+    font-weight: 400;
+    font-style: italic;
+}
+@font-face {
+    font-family: 'Instrument Sans Condensed';
+    src: url('fonts/Instrument Sans/InstrumentSans_Condensed-BoldItalic.ttf') format('truetype');
+    font-weight: 700;
+    font-style: italic;
+}
+@font-face {
+    font-family: 'Instrument Sans Condensed';
+    src: url('fonts/Instrument Sans/InstrumentSans_Condensed-Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Instrument Sans Condensed';
+    src: url('fonts/Instrument Sans/InstrumentSans_Condensed-MediumItalic.ttf') format('truetype');
+    font-weight: 500;
+    font-style: italic;
+}
+@font-face {
+    font-family: 'Instrument Sans Condensed';
+    src: url('fonts/Instrument Sans/InstrumentSans_Condensed-SemiBold.ttf') format('truetype');
+    font-weight: 600;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Instrument Sans Condensed';
+    src: url('fonts/Instrument Sans/InstrumentSans_Condensed-SemiBoldItalic.ttf') format('truetype');
+    font-weight: 600;
+    font-style: italic;
+}
+
+/* SemiCondensed */
+@font-face {
+    font-family: 'Instrument Sans SemiCondensed';
+    src: url('fonts/Instrument Sans/InstrumentSans_SemiCondensed-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Instrument Sans SemiCondensed';
+    src: url('fonts/Instrument Sans/InstrumentSans_SemiCondensed-Bold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Instrument Sans SemiCondensed';
+    src: url('fonts/Instrument Sans/InstrumentSans_SemiCondensed-Italic.ttf') format('truetype');
+    font-weight: 400;
+    font-style: italic;
+}
+@font-face {
+    font-family: 'Instrument Sans SemiCondensed';
+    src: url('fonts/Instrument Sans/InstrumentSans_SemiCondensed-BoldItalic.ttf') format('truetype');
+    font-weight: 700;
+    font-style: italic;
+}
+@font-face {
+    font-family: 'Instrument Sans SemiCondensed';
+    src: url('fonts/Instrument Sans/InstrumentSans_SemiCondensed-Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Instrument Sans SemiCondensed';
+    src: url('fonts/Instrument Sans/InstrumentSans_SemiCondensed-MediumItalic.ttf') format('truetype');
+    font-weight: 500;
+    font-style: italic;
+}
+@font-face {
+    font-family: 'Instrument Sans SemiCondensed';
+    src: url('fonts/Instrument Sans/InstrumentSans_SemiCondensed-SemiBold.ttf') format('truetype');
+    font-weight: 600;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Instrument Sans SemiCondensed';
+    src: url('fonts/Instrument Sans/InstrumentSans_SemiCondensed-SemiBoldItalic.ttf') format('truetype');
+    font-weight: 600;
+    font-style: italic;
+}
