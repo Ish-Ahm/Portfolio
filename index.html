@@ -1,34 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
 
+<div id="top"></div>
+
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>My Portfolio</title>
     <link rel="stylesheet" href="styles.css" />
-    
-    <!-- Google Fonts link for Instrument-Sans -->
-    <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans&display=swap" rel="stylesheet">
 </head>
 
 
 <body>
 
+    <!-- HEADER / NAVBAR -->
     <header>
         <div class="header-container">
-            <img src="images/logo.png" alt="Logo" class="header-logo" />
+            <a href="#top">
+                <img src="images/logo.png" alt="Logo" class="header-logo"/>
+            </a>
             <nav>
-                <ul class="nav-list">
+                <ul class="nav-list" id="nav-list">
                     <li><a href="#aboutme">About Me</a></li>
                     <li><a href="#projects">Projects</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
+                <div class="burger" id="burger">
+                    ☰
+                </div>
             </nav>
         </div>
     </header>
 
     <main>
-        <!-- Intro section with text and circular image -->
+        <!-- INTRO SECTION (with image and text) -->
         <section class="intro-section">
             <div class="text-content">
                 <h2>Hi, my name is <span class="highlight">Ishaan Ahmed</span>.</h2>
@@ -46,7 +51,7 @@
             </div>
         </section>
 
-        <section class="about-me-section">
+        <section class="about-me-section" id="aboutme">
             <div class="about-title">
                 ABOUT ME
             </div>
@@ -64,12 +69,12 @@
             </div>
         </section>
 
-
-        <section class="projects-section">
+        <!-- PROJECTS SECTION (with categories and image galleries) -->
+        <section class="projects-section" id="projects">
             <h2 class="projects-title">PROJECTS</h2>
             
             <div class="project-category">
-                <h3>3D Modelling</h3>
+                <h3><a href="projects-pages\project-3dmodelling.html">3D Modelling</a></h3>
                 <div class="project-gallery">
                     <img src="images/3d/3d_1.png" alt="3D Model 1">
                     <img src="images/3d/3d_2.png" alt="3D Model 2">
@@ -98,7 +103,8 @@
             </div>
         </section>
 
-        <section class="contact-section">
+        <!-- CONTACT SECTION (with form) -->
+        <section class="contact-section" id="contact">
             <div class="contact-title">
                 CONTACT ME
             </div>
@@ -124,6 +130,7 @@
         </section>
     </main>
 
+    <!-- FOOTER SECTION -->
     <footer>
         <p>&copy; 2025 Ishaan Ahmed. All rights reserved.</p>
     </footer>

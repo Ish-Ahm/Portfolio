@@ -1,0 +1,419 @@
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 800px; /* equal to navbar height */
+}
+
+/* basic reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Instrument Sans', sans-serif;
+    font-weight: 500;
+}
+
+body {
+    background-color: #fff;
+    color: #111;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+
+/* -------- HEADER & NAVIGATION -------- */
+header {
+    box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+    position: fixed;
+    top: 0; /* stick to top */
+    left: 0; /* align to left edge */
+    background-color: #3a3a3a;
+    padding: 2rem 0;
+    width: 100%;
+    z-index: 1000; /* keep header above other content */
+}
+
+.header-container {
+    margin: 0 auto;
+    padding-left: 80px; /* space for logo */
+    display: flex;
+    justify-content: center; /* centers nav */
+    align-items: center;
+    position: relative;
+}
+
+.header-logo {
+    position: absolute;
+    left: 20px;  /* distance from left edge */
+    height: 40px; /* adjust as needed */
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+/* Center the logo when the screen width is large */
+@media (min-width: 1200px) {
+    .header-container {
+        justify-content: center; /* center all items */
+        gap: 50px; /* space between logo and links */
+    }
+
+    .header-container img {
+        padding-left: 100px; /* push logo slightly left if needed */
+    }
+}
+
+/* Change location of image when screen size small */
+@media (max-width: 800px) {
+    .header-logo {
+        display: block;
+        margin: 0 auto;  /* centers the image horizontally */
+        position: static; /* remove absolute positioning */
+        transform: none;  /* remove vertical translate */
+    }
+}
+
+.nav-list {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    margin: 0;
+    padding: 0;
+    transition: all 0.3s ease;
+}
+
+.nav-list a {
+    font-family: 'Instrument Sans', sans-serif;
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.5rem;
+}
+
+.nav-list a:hover {
+    color: #FF8412;
+}
+
+/* burger menu icon - hidden by default */
+.burger {
+    display: none;
+    font-size: 32px;
+    color: white;
+    cursor: pointer;
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    user-select: none;
+}
+
+/* Responsive nav for small screens */
+@media (max-width: 800px) {
+    .nav-list {
+        display: none;
+        flex-direction: column;
+        gap: 15px;
+        position: absolute;
+        top: 70px;
+        right: 20px;
+        background-color: #2A2A2A;
+        border: 1px solid #444;
+        border-radius: 8px;
+        padding: 15px 0;
+        width: 180px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    }
+
+    .nav-list.active {
+        display: flex;
+    }
+
+    .burger {
+        display: block;
+    }
+}
+
+
+/* -------- MAIN PROJECT SECTION -------- */
+main.project-container {
+    max-width: 1000px;
+    margin: 40px auto;
+    padding: 0 20px;
+    margin-top: 4rem; /* space for header */
+}
+
+.project-container h1 {
+    font-family: 'Britannica Gold', sans-serif;
+    color: #2A2A2A;
+    font-weight: 600;
+    font-size: 3rem;
+    margin-bottom: 15px;
+}
+
+.project-container p {
+    font-weight: 500;
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    line-height: 1.5;
+    margin-bottom: 3rem;
+}
+
+
+/* -------- IMAGE GRID FOR PLACEHOLDERS -------- */
+.image-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* two columns */
+    gap: 1.5rem; /* space between images */
+    margin-bottom: 20px;
+}
+
+.img-box {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* keeps aspect ratio, fills the box */
+    border: none; /* removes border */
+    border-radius: 2; /* removes circular shape */
+    box-shadow: none; /* no shadow */
+    background: none; /* removes any background color */
+    display: block; /* ensures image behaves as block-level */
+    transition: transform 0.3s ease; /* smooth animation */
+}
+
+.img-box img {
+    gap: 10rem; /* space between images */
+}
+
+.img-box:hover {
+    transform: translateY(-5px); /* smooth movement */
+}
+
+@media (max-width: 600px) {
+    .image-grid {
+        grid-template-columns: 1fr; /* single column */
+    }
+}
+
+
+/* -------- LINK STYLING -------- */
+.project-link a {
+    color: #0000ee;
+    text-decoration: underline;
+}
+
+
+/* -------- FOOTER -------- */
+footer {
+    background-color: #1a1a1a;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+    margin-top: auto;
+}
+
+.social-icons {
+    margin-bottom: 10px;
+}
+
+.social-icons a img {
+    width: 24px;
+    margin: 0 8px;
+    filter: invert(100%);
+}
+
+
+/* -------- MODAL -------- */
+/* modal background */
+.modal {
+    display: none; /* hidden by default */
+    position: fixed;
+    z-index: 1000;
+    padding-top: 60px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.8); /* dark background */
+}
+
+/* zoomed image */
+.modal-content {
+    display: block;
+    margin: auto;
+    width: 80%; /* 80% of screen width */
+    max-width: 900px; /* optional max size */
+    border-radius: 10px;
+}
+
+/* close button (X) */
+.close {
+    position: absolute;
+    top: 20px;
+    right: 35px;
+    color: white;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.close:hover {
+    color: #ccc;
+}
+
+
+
+
+/* ========= CUSTOM FONTS ========= */
+
+/* -------- MINECRAFT FONT -------- */
+@font-face {
+    font-family: 'Minecraft';
+    src: url('../fonts/minecraft_font.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+
+/* -------- BRITANNICA GOLD FONT -------- */
+@font-face {
+    font-family: 'Britannica Gold';
+    src: url('../fonts/britannic_bold_regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* -------- INSTRUMENT SANS STATIC FONTS -------- */
+@font-face {
+    font-family: 'Instrument Sans';
+    src: url('../fonts/InstrumentSans-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Instrument Sans';
+    src: url('../fonts/InstrumentSans-Italic.ttf') format('truetype');
+    font-weight: 400;
+    font-style: italic;
+}
+@font-face {
+    font-family: 'Instrument Sans';
+    src: url('../fonts/InstrumentSans-Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Instrument Sans';
+    src: url('../fonts/InstrumentSans-MediumItalic.ttf') format('truetype');
+    font-weight: 500;
+    font-style: italic;
+}
+@font-face {
+    font-family: 'Instrument Sans';
+    src: url('../fonts/InstrumentSans-Bold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Instrument Sans';
+    src: url('../fonts/InstrumentSans-BoldItalic.ttf') format('truetype');
+    font-weight: 700;
+    font-style: italic;
+}
+@font-face {
+    font-family: 'Instrument Sans Condensed';
+    src: url('../fonts/Instrument-Sans/InstrumentSans_Condensed-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Instrument Sans Condensed';
+    src: url('../fonts/Instrument-Sans/InstrumentSans_Condensed-Bold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Instrument Sans Condensed';
+    src: url('../fonts/Instrument-Sans/InstrumentSans_Condensed-Italic.ttf') format('truetype');
+    font-weight: 400;
+    font-style: italic;
+}
+@font-face {
+    font-family: 'Instrument Sans Condensed';
+    src: url('../fonts/Instrument-Sans/InstrumentSans_Condensed-BoldItalic.ttf') format('truetype');
+    font-weight: 700;
+    font-style: italic;
+}
+@font-face {
+    font-family: 'Instrument Sans Condensed';
+    src: url('../fonts/Instrument-Sans/InstrumentSans_Condensed-Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Instrument Sans Condensed';
+    src: url('../fonts/Instrument-Sans/InstrumentSans_Condensed-MediumItalic.ttf') format('truetype');
+    font-weight: 500;
+    font-style: italic;
+}
+@font-face {
+    font-family: 'Instrument Sans Condensed';
+    src: url('../fonts/Instrument-Sans/InstrumentSans_Condensed-SemiBold.ttf') format('truetype');
+    font-weight: 600;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Instrument Sans Condensed';
+    src: url('../fonts/Instrument-Sans/InstrumentSans_Condensed-SemiBoldItalic.ttf') format('truetype');
+    font-weight: 600;
+    font-style: italic;
+}
+
+/* SemiCondensed */
+@font-face {
+    font-family: 'Instrument Sans SemiCondensed';
+    src: url('../fonts/Instrument-Sans/InstrumentSans_SemiCondensed-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Instrument Sans SemiCondensed';
+    src: url('../fonts/Instrument-Sans/InstrumentSans_SemiCondensed-Bold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Instrument Sans SemiCondensed';
+    src: url('../fonts/Instrument-Sans/InstrumentSans_SemiCondensed-Italic.ttf') format('truetype');
+    font-weight: 400;
+    font-style: italic;
+}
+@font-face {
+    font-family: 'Instrument Sans SemiCondensed';
+    src: url('../fonts/Instrument-Sans/InstrumentSans_SemiCondensed-BoldItalic.ttf') format('truetype');
+    font-weight: 700;
+    font-style: italic;
+}
+@font-face {
+    font-family: 'Instrument Sans SemiCondensed';
+    src: url('../fonts/Instrument-Sans/InstrumentSans_SemiCondensed-Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Instrument Sans SemiCondensed';
+    src: url('../fonts/Instrument-Sans/InstrumentSans_SemiCondensed-MediumItalic.ttf') format('truetype');
+    font-weight: 500;
+    font-style: italic;
+}
+@font-face {
+    font-family: 'Instrument Sans SemiCondensed';
+    src: url('../fonts/Instrument-Sans/InstrumentSans_SemiCondensed-SemiBold.ttf') format('truetype');
+    font-weight: 600;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Instrument Sans SemiCondensed';
+    src: url('../fonts/Instrument-Sans/InstrumentSans_SemiCondensed-SemiBoldItalic.ttf') format('truetype');
+    font-weight: 600;
+    font-style: italic;
+}
