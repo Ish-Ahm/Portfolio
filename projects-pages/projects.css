@@ -139,7 +139,7 @@ main.project-container {
     max-width: 1000px;
     margin: 40px auto;
     padding: 0 20px;
-    margin-top: 4rem; /* space for header */
+    margin-top: 8rem; /* space for fixed header */
 }
 
 .project-container h1 {
