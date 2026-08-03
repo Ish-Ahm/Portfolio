@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<div id="top"></div>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Page</title>
+    <link rel="stylesheet" href="projects.css">
+</head>
+
+<body>
+
+    <!-- HEADER / NAVBAR -->
+    <header>
+        <div class="header-container">
+            <a href="../index.html">
+                <img src="../images/logo.png" alt="Logo" class="header-logo"/>
+            </a>
+            <nav>
+                <ul class="nav-list" id="nav-list">
+                    <li><a href="../index.html#aboutme">About Me</a></li>
+                    <li><a href="../index.html#projects">Projects</a></li>
+                    <li><a href="https://www.linkedin.com/in/ishaan-ahmed-" target="_blank">LinkedIn</a></li>
+                    <li><a href="https://drive.google.com/file/d/16GE38jJM7ZiMNmo-ROsJmO9TjHRUJi5x/view?usp=sharing" target="_blank">Resume</a></li>
+                </ul>
+                <div class="burger" id="burger">
+                    ☰
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- MAIN CONTENT (with project name, description, and images -->
+    <main class="project-container">
+        <h1>The Climate Toll of the Fashion Life Cycle</h1>
+        <p>
+            <br>
+            As part of a university team project, we designed and built a physical interactive installation exposing the environmental impact of the clothing lifecycle, from manufacturing through to disposal. Rather than presenting statistics on a screen, the installation lets a single user physically journey through each stage: selecting an outfit at a smart wardrobe, watching a miniature factory emit smoke and consume water to simulate production, rotating a washing machine drum to see cumulative water and energy use, and finally choosing how to dispose of their garment across recycling, secondhand, or landfill bins.
+            <br><br>
+            Every choice fed into a running sustainability score, visualised through a colour-changing LED Earth model at the end of the experience, glowing green for thoughtful decisions or burning red for careless ones. The system combined Arduino-driven hardware (barcode scanning, water pumps, smoke machines, rotating mechanisms) with a Python backend pulling from real datasets on textile production emissions, water consumption, and global textile waste, to ground the experience in real-world figures rather than abstract numbers.
+            <br><br>
+            The installation was designed with museums, sustainability fairs, and university spaces in mind, targeting the general public and especially students, to turn passive awareness of fashion's environmental cost into something felt and reflected on.
+        </p>
+
+        <!-- Repeat this "text + image batch" block for each group of images. Copy the whole
+             .project-block div (text paragraph + image-grid) to add another batch further down. -->
+        <div class="project-block">
+            <div class="image-grid">
+                <div class="img-wrapper">
+                    <img src="../images/fastfashion/fastfashion_3.png" alt="In progress version of the installation - 1" class="img-box">
+                    <span class="img-caption"></span>
+                </div>
+                <div class="img-wrapper">
+                    <img src="../images/fastfashion/fastfashion_2.png" alt="In progress version of the installation - 2" class="img-box">
+                    <span class="img-caption"></span>
+                </div>
+                <div class="img-wrapper">
+                    <img src="../images/fastfashion/fastfashion_1.png" alt="Final version of the installation" class="img-box">
+                    <span class="img-caption"></span>
+                </div>
+                <div class="img-wrapper">
+                    <img src="../images/fastfashion/fastfashion_4.png" alt="Overview of how the installation journey is supposed to work" class="img-box">
+                    <span class="img-caption"></span>
+                </div>
+                <div class="img-wrapper">
+                    <video src="../images/fastfashion/fastfashion_vid.mp4" class="img-box" muted preload="metadata" data-caption="Walkthrough of the interactive installation in action"></video>
+                    <span class="play-icon">&#9658;</span>
+                    <span class="img-caption"></span>
+                </div>
+            </div>
+        </div>
+
+        <!-- <p class="project-link"> -->
+        <!-- Link: <a href="#">thisisasamplelink.com/areyoustillreadingthis?=youdonthaveanythingelsetodo</a> -->
+        <!-- </p> -->
+    </main>
+
+    <!-- footer -->
+    <footer>
+        <div class="social-icons">
+
+        </div>
+        <p>All works © Ishaan Ahmed 2024. Please do not replicate without the expressed written consent of Ishaan Ahmed.</p>
+    </footer>
+
+    <!-- image lightbox / zoom modal -->
+    <div id="imgModal" class="modal">
+        <span class="close">&times;</span>
+        <div class="modal-inner">
+            <img class="modal-content" id="zoomedImage">
+            <video class="modal-content" id="zoomedVideo" controls></video>
+            <p class="modal-caption" id="modalCaption"></p>
+        </div>
+    </div>
+
+    <script src="projects.js"></script>
+
+</body>
+</html>

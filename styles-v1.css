@@ -1,0 +1,673 @@
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px; /* equal to navbar height */
+}
+
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body base styles */
+body {
+    font-family: 'Instrument Sans', sans-serif !important;
+    line-height: 1.6;
+    background-color: #fafafa;
+    color: #333;
+    padding-top: 60px; /* same as navbar height */
+    min-width: 320px; /* Prevents horizontal scroll on small screens */
+}
+
+
+/* -------- HEADER & NAVIGATION -------- */
+header {
+    box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+    position: fixed;
+    top: 0; /* stick to top */
+    left: 0; /* align to left edge */
+    background-color: #3a3a3a;
+    padding: 1rem 0;
+    width: 100%;
+    z-index: 1000; /* keep header above other content */
+}
+
+.header-container {
+    margin: 0 auto;
+    padding-left: 80px; /* space for logo */
+    display: flex;
+    justify-content: center; /* centers nav */
+    align-items: center;
+    position: relative;
+}
+
+.header-logo {
+    position: absolute;
+    left: 20px;  /* distance from left edge */
+    height: 40px; /* adjust as needed */
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+/* Center the logo when the screen width is large */
+@media (min-width: 1200px) {
+    .header-container {
+        justify-content: center; /* center all items */
+        gap: 50px; /* space between logo and links */
+    }
+
+    .header-container img {
+        padding-left: 100px; /* push logo slightly left if needed */
+    }
+}
+
+/* Change location of image when screen size small */
+@media (max-width: 800px) {
+    .header-logo {
+        display: block;
+        margin: 0 auto;  /* centers the image horizontally */
+        position: static; /* remove absolute positioning */
+        transform: none;  /* remove vertical translate */
+    }
+}
+
+.nav-list {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    margin: 0;
+    padding: 0;
+    transition: all 0.3s ease;
+}
+
+.nav-list a {
+    font-family: 'Instrument Sans', sans-serif !important;
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.5rem;
+}
+
+.nav-list a:hover {
+    color: #FF8412;
+}
+
+/* burger menu icon - hidden by default */
+.burger {
+    display: none;
+    font-size: 32px;
+    color: white;
+    cursor: pointer;
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    user-select: none;
+}
+
+/* Responsive nav for small screens */
+@media (max-width: 800px) {
+    .nav-list {
+        display: none;
+        flex-direction: column;
+        gap: 15px;
+        position: absolute;
+        top: 70px;
+        right: 20px;
+        background-color: #2A2A2A;
+        border: 1px solid #444;
+        border-radius: 8px;
+        padding: 15px 0;
+        width: 180px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    }
+
+    .nav-list.active {
+        display: flex;
+    }
+
+    .burger {
+        display: block;
+    }
+}
+
+
+/* -------- INTRO SECTION (Text + Circular Image) -------- */
+.intro-section {
+    display: flex;
+    align-items: center;
+    max-width: 1000px;
+    margin: 4rem auto;
+    font-family: 'Instrument Sans', sans-serif;
+    align-items: center;
+    gap: 1rem; 
+}
+
+.text-content {
+    flex: 1.5;
+    display: flex;
+    flex-direction: column;
+    margin-left: 3rem ;
+}
+
+.text-content h2 {
+    font-family: 'Britannica Gold', sans-serif !important;
+    font-weight: 400;
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    color: #222;
+}
+
+.text-content p {
+    font-weight: 600;
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+    font-weight: bolder;
+    text-align: left;
+    line-height: 2rem;
+    margin-right: 5rem;
+}
+
+/* Controls the gap between h2 and first p */
+.text-content h2 + p {
+    margin-top: 0.8rem;
+}
+
+.highlight {
+    color: #FF8412;
+}
+
+.profile-image {
+    width: 300px;
+    height: auto;
+    aspect-ratio: 1 / 1; /* Ensures the image is square */
+    display: flex;
+    justify-content: center;
+    /* Prevent anti-aliasing artifacts */
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    margin-bottom: 1rem;
+}
+
+.profile-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 100%;
+    border: 8px solid #2A2A2A;
+    transition: border-color 0.3s ease;
+    box-shadow: none;
+    background-clip: padding-box;
+}
+
+.profile-image:hover img {
+    border-color: #FF8412; /* orange on hover */
+}
+
+/* Responsive: stack vertically on small screens */
+@media (max-width: 800px) {
+    .intro-section {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .text-content h2 {
+        line-height: 1.2;
+        margin-bottom: rem;
+    }
+
+    .text-content p {
+        font-size: 0.9rem;
+        text-align: left;
+        margin-inline: 0;
+    }
+
+    .profile-image {
+        order: -1;
+        width: 300px;
+        height: 300px;
+    }
+
+    .profile-image img {
+        border: 8px solid #2A2A2A; /* thinner border on small screens */
+    }
+
+    .text-content {
+        order: 0;
+    }
+
+    .text-content h2 {
+        font-size: 2.5rem;
+        margin-top: 2rem;
+        margin-bottom: 0.8rem;
+    }
+    
+    .text-content p {
+        font-size: 1.5rem;
+        line-height: 1.3;
+        margin-inline: 4rem;
+    }
+}
+
+
+/* -------- ABOUT ME SECTION -------- */
+.about-me-section {
+    display: flex;
+    justify-content: center;
+    background-color: #2A2A2A; /* dark grey */
+    color: white;
+    width: 100vw;
+    margin: 40px 0;
+    padding: 40px 0;
+    font-family: 'Instrument Sans', sans-serif;
+    border-radius: 0;
+}
+
+/* Pixel-style font for ABOUT ME title */
+.about-me-section > .about-title {
+    font-family: 'Britannica Gold', sans-serif !important; /* pixel font */
+    font-size: 3rem;
+    color: #FF8412; /* orange */
+    text-shadow: 0px 4px 0px #000000;
+    letter-spacing: 2px;
+    white-space: nowrap;
+    align-self: center;
+    justify-content: flex-start;
+    display: flex;
+    height: 100%;
+    padding-left: 20px;
+}
+
+.about-me-section > .about-content {
+    max-width: 800px;
+    width: 80%;
+    padding: 0 30px;
+    padding-left: 100px;
+    box-sizing: border-box;
+    gap: 10px;
+    border-radius: 8px;
+    flex: 1;
+}
+
+.about-content h3 {
+    margin-top: 0;
+    font-weight: 700;
+    text-shadow: 0px 2px 2px #000000;
+    margin-bottom: 0.2rem;
+    font-size: 1.8rem;
+}
+
+.about-content p {
+    margin-top: 0;
+    font-weight: 400;
+    margin-bottom: 10px;
+    line-height: 1.5;
+    font-size: 1.2rem;
+}
+
+/* Controls the gap between h2 and first p */
+.about-content-skills + .about-content-languages {
+    margin-top: 2rem;
+}
+
+/* Responsive about me section */
+@media (max-width: 800px) {
+    .about-me-section {
+        flex-direction: column;
+        padding: 30px 30px;
+        gap:    0px;
+    }
+    
+    .about-title {
+        text-align: right;
+        font-size: 2.6rem;
+        margin-bottom: 10px;
+    }
+    
+    .about-content h3{
+        text-align: left;
+        padding-left: 0px;
+        width: 100%;
+    }
+
+    .about-content p {
+        text-align: left;
+        padding-left: 0;
+        width: 100%;
+    }
+}
+
+
+/* -------- PROJECTS SECTION -------- */
+.projects-section {
+    width: 100vw;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+.projects-section > .projects-title {
+    font-family: 'Britannica Gold', sans-serif !important;
+    font-size: 3rem;
+    font-weight: normal;
+    color: #000000;
+    text-shadow: 0px 2px 0px #fd7a00;
+    letter-spacing: 2px;
+    white-space: nowrap;
+    align-self: center;
+    justify-content: center;
+    display: flex;
+    height: 100%;
+    padding-left: 20px;
+    margin-bottom: 30px;
+}
+
+.project-title + .project-category {
+    gap: 2rem;
+}
+
+.projects-section > .project-category {
+    background: #222;
+    border-radius: 20px;
+    padding: 0.8rem 1.2rem 1.5rem 1.2rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+    max-width: 120%;
+}
+
+.project-category h3 {
+    font-family: 'Instrument Sans', sans-serif !important;
+    font-weight: 700;
+    text-shadow: 0px 2px 0px #000000;
+    color: #fff;
+    text-align: center;
+    font-size: 1.7rem;
+    margin-bottom: 1rem;
+}
+
+.project-category a {
+    font-family: 'Instrument Sans', sans-serif !important;
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.5rem;
+}
+
+.project-category a:hover {
+    color: #FF8412;
+}
+
+.project-category > .project-gallery {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.project-gallery img {
+    width: 300px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 12px;
+    background: #111;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.18);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.project-gallery img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 2rem rgba(255,132,18,0.50);
+}
+
+.project-gallery img {
+    cursor: pointer;
+}
+
+
+/* -------- MODAL (image lightbox / zoom) -------- */
+.modal {
+    display: none; /* hidden by default */
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.85);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.modal.active {
+    display: flex;
+    opacity: 1;
+}
+
+/* wraps the zoomed image and its caption so they scale in together */
+.modal-inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 90vw;
+    max-height: 90vh;
+    transform: scale(0.85);
+    transition: transform 0.3s ease;
+}
+
+.modal.active .modal-inner {
+    transform: scale(1);
+}
+
+/* zoomed image: object-fit: contain keeps the full image visible at its natural aspect ratio */
+.modal-content {
+    display: block;
+    max-width: 90vw;
+    max-height: 80vh;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    border-radius: 10px;
+}
+
+.modal-caption {
+    margin-top: 1rem;
+    padding: 0.6rem 1rem;
+    background: rgba(0, 0, 0, 0.6);
+    border-radius: 6px;
+    color: #fff;
+    font-size: 1.1rem;
+    text-align: center;
+}
+
+.close {
+    position: absolute;
+    top: 20px;
+    right: 35px;
+    color: white;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.close:hover {
+    color: #ccc;
+}
+
+
+/* -------- FOOTER -------- */
+footer {
+    text-align: center;
+    margin-top: 60px;
+    color: #777;
+    font-size: 0.9rem;
+    margin-top: 8rem;
+}
+
+/* Utility classes */
+.hidden {
+    display: none;
+}
+
+
+
+
+
+
+/* ========= CUSTOM FONTS ========= */
+
+/* -------- MINECRAFT FONT -------- */
+@font-face {
+    font-family: 'Minecraft';
+    src: url('fonts/minecraft_font.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+
+/* -------- BRITANNICA GOLD FONT -------- */
+@font-face {
+    font-family: 'Britannica Gold';
+    src: url('fonts/britannic_bold_regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* -------- INSTRUMENT SANS STATIC FONTS -------- */
+@font-face {
+    font-family: 'Instrument Sans';
+    src: url('fonts/InstrumentSans-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Instrument Sans';
+    src: url('fonts/InstrumentSans-Italic.ttf') format('truetype');
+    font-weight: 400;
+    font-style: italic;
+}
+@font-face {
+    font-family: 'Instrument Sans';
+    src: url('fonts/InstrumentSans-Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Instrument Sans';
+    src: url('fonts/InstrumentSans-MediumItalic.ttf') format('truetype');
+    font-weight: 500;
+    font-style: italic;
+}
+@font-face {
+    font-family: 'Instrument Sans';
+    src: url('fonts/InstrumentSans-Bold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Instrument Sans';
+    src: url('fonts/InstrumentSans-BoldItalic.ttf') format('truetype');
+    font-weight: 700;
+    font-style: italic;
+}
+@font-face {
+    font-family: 'Instrument Sans Condensed';
+    src: url('fonts/Instrument-Sans/InstrumentSans_Condensed-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Instrument Sans Condensed';
+    src: url('fonts/Instrument-Sans/InstrumentSans_Condensed-Bold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Instrument Sans Condensed';
+    src: url('fonts/Instrument-Sans/InstrumentSans_Condensed-Italic.ttf') format('truetype');
+    font-weight: 400;
+    font-style: italic;
+}
+@font-face {
+    font-family: 'Instrument Sans Condensed';
+    src: url('fonts/Instrument-Sans/InstrumentSans_Condensed-BoldItalic.ttf') format('truetype');
+    font-weight: 700;
+    font-style: italic;
+}
+@font-face {
+    font-family: 'Instrument Sans Condensed';
+    src: url('fonts/Instrument-Sans/InstrumentSans_Condensed-Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Instrument Sans Condensed';
+    src: url('fonts/Instrument-Sans/InstrumentSans_Condensed-MediumItalic.ttf') format('truetype');
+    font-weight: 500;
+    font-style: italic;
+}
+@font-face {
+    font-family: 'Instrument Sans Condensed';
+    src: url('fonts/Instrument-Sans/InstrumentSans_Condensed-SemiBold.ttf') format('truetype');
+    font-weight: 600;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Instrument Sans Condensed';
+    src: url('fonts/Instrument-Sans/InstrumentSans_Condensed-SemiBoldItalic.ttf') format('truetype');
+    font-weight: 600;
+    font-style: italic;
+}
+
+/* SemiCondensed */
+@font-face {
+    font-family: 'Instrument Sans SemiCondensed';
+    src: url('fonts/Instrument-Sans/InstrumentSans_SemiCondensed-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Instrument Sans SemiCondensed';
+    src: url('fonts/Instrument-Sans/InstrumentSans_SemiCondensed-Bold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Instrument Sans SemiCondensed';
+    src: url('fonts/Instrument-Sans/InstrumentSans_SemiCondensed-Italic.ttf') format('truetype');
+    font-weight: 400;
+    font-style: italic;
+}
+@font-face {
+    font-family: 'Instrument Sans SemiCondensed';
+    src: url('fonts/Instrument-Sans/InstrumentSans_SemiCondensed-BoldItalic.ttf') format('truetype');
+    font-weight: 700;
+    font-style: italic;
+}
+@font-face {
+    font-family: 'Instrument Sans SemiCondensed';
+    src: url('fonts/Instrument-Sans/InstrumentSans_SemiCondensed-Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Instrument Sans SemiCondensed';
+    src: url('fonts/Instrument-Sans/InstrumentSans_SemiCondensed-MediumItalic.ttf') format('truetype');
+    font-weight: 500;
+    font-style: italic;
+}
+@font-face {
+    font-family: 'Instrument Sans SemiCondensed';
+    src: url('fonts/Instrument-Sans/InstrumentSans_SemiCondensed-SemiBold.ttf') format('truetype');
+    font-weight: 600;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Instrument Sans SemiCondensed';
+    src: url('fonts/Instrument-Sans/InstrumentSans_SemiCondensed-SemiBoldItalic.ttf') format('truetype');
+    font-weight: 600;
+    font-style: italic;
+}
+

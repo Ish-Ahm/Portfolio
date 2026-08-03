@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<div id="top"></div>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Page</title>
+    <link rel="stylesheet" href="projects.css">
+</head>
+
+<body>
+
+    <!-- HEADER / NAVBAR -->
+    <header>
+        <div class="header-container">
+            <a href="../index.html">
+                <img src="../images/logo.png" alt="Logo" class="header-logo"/>
+            </a>
+            <nav>
+                <ul class="nav-list" id="nav-list">
+                    <li><a href="../index.html#aboutme">About Me</a></li>
+                    <li><a href="../index.html#projects">Projects</a></li>
+                    <li><a href="https://www.linkedin.com/in/ishaan-ahmed-" target="_blank">LinkedIn</a></li>
+                    <li><a href="https://drive.google.com/file/d/16GE38jJM7ZiMNmo-ROsJmO9TjHRUJi5x/view?usp=sharing" target="_blank">Resume</a></li>
+                </ul>
+                <div class="burger" id="burger">
+                    ☰
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- MAIN CONTENT (with project name, description, and images -->
+    <main class="project-container">
+        <h1>Fitness Step Tracker</h1>
+        <p>
+            I designed and built a wearable step tracker that counts a user's steps using an accelerometer and displays real-time stats such as step count and distance on a small onboard screen. The project involved embedded programming, sensor calibration, and iterating on the logic used to filter out false step readings from everyday hand and arm movement.
+            <br><br>
+            The device's enclosure was custom 3D printed to comfortably hold the electronics on the wrist, and the firmware was written to balance responsiveness with battery life. This project combined hardware prototyping with low-level programming to create a compact, functional fitness device from the ground up.
+        </p>
+
+        <!-- Repeat this "text + image batch" block for each group of images. Copy the whole
+             .project-block div (text paragraph + image-grid) to add another batch further down. -->
+        <div class="project-block">
+            <div class="image-grid">
+                <div class="img-wrapper">
+                    <img src="../images/steptracker/steptracker_1.png" alt="Painting screen that progressively becomes complete as steps are counted" class="img-box">
+                    <span class="img-caption"></span>
+                </div>
+                <div class="img-wrapper">
+                    <img src="../images/steptracker/steptracker_2.png" alt="3D printed casing for the step tracker" class="img-box">
+                    <span class="img-caption"></span>
+                </div>
+                <div class="img-wrapper">
+                    <video src="../images/steptracker/steptracker_vid.mp4" class="img-box" muted preload="metadata" data-caption="Demo video of the step tracker in use"></video>
+                    <span class="play-icon">&#9658;</span>
+                    <span class="img-caption"></span>
+                </div>
+            </div>
+        </div>
+
+        <!-- <p class="project-link"> -->
+        <!-- Link: <a href="#">thisisasamplelink.com/areyoustillreadingthis?=youdonthaveanythingelsetodo</a> -->
+        <!-- </p> -->
+    </main>
+
+    <!-- footer -->
+    <footer>
+        <div class="social-icons">
+
+        </div>
+        <p>All works © Ishaan Ahmed 2024. Please do not replicate without the expressed written consent of Ishaan Ahmed.</p>
+    </footer>
+
+    <!-- image lightbox / zoom modal -->
+    <div id="imgModal" class="modal">
+        <span class="close">&times;</span>
+        <div class="modal-inner">
+            <img class="modal-content" id="zoomedImage">
+            <video class="modal-content" id="zoomedVideo" controls></video>
+            <p class="modal-caption" id="modalCaption"></p>
+        </div>
+    </div>
+
+    <script src="projects.js"></script>
+
+</body>
+</html>

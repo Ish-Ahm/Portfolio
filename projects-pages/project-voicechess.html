@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<div id="top"></div>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Page</title>
+    <link rel="stylesheet" href="projects.css">
+</head>
+
+<body>
+
+    <!-- HEADER / NAVBAR -->
+    <header>
+        <div class="header-container">
+            <a href="../index.html">
+                <img src="../images/logo.png" alt="Logo" class="header-logo"/>
+            </a>
+            <nav>
+                <ul class="nav-list" id="nav-list">
+                    <li><a href="../index.html#aboutme">About Me</a></li>
+                    <li><a href="../index.html#projects">Projects</a></li>
+                    <li><a href="https://www.linkedin.com/in/ishaan-ahmed-" target="_blank">LinkedIn</a></li>
+                    <li><a href="https://drive.google.com/file/d/16GE38jJM7ZiMNmo-ROsJmO9TjHRUJi5x/view?usp=sharing" target="_blank">Resume</a></li>
+                </ul>
+                <div class="burger" id="burger">
+                    ☰
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- MAIN CONTENT (with project name, description, and images -->
+    <main class="project-container">
+        <h1>Voice-based Chess</h1>
+        <p>
+        I co-designed and co-developed a voice-controlled chess game, combining a classic pygame-based chess interface with real-time speech recognition. Rather than relying solely on keyboard input or traditional voice commands used to play chess (e.g. "Knight to E6"), the game is primarily played using six spoken commands (up, down, left, right, pickup, drop) that move the cursor and control piece selection, alongside full keyboard support as a fallback. The project explores how lightweight, locally-run voice interfaces can be integrated into interactive applications without depending on cloud-based speech APIs.
+        <br><br>
+        The system is built around a custom-trained CNN for keyword spotting, which listens for short audio clips and classifies them into one of the six commands in real time. Recognised commands are then mapped directly to in-game cursor actions. The chess engine itself, covering move validation, turn logic and game state, was developed and refined independently before voice integration was layered on top, resulting in a modular, well-organised codebase.
+        </p>
+
+        <!-- Repeat this "text + image batch" block for each group of images. Copy the whole
+             .project-block div (text paragraph + image-grid) to add another batch further down. -->
+        <div class="project-block">
+            <div class="image-grid">
+                <div class="img-wrapper">
+                    <img src="../images/voicechess/voicechess_1.png" alt="Example of the game being played between 2 players" class="img-box">
+                    <span class="img-caption"></span>
+                </div>
+                <div class="img-wrapper">
+                    <img src="../images/voicechess/voicechess_2.png" alt="Top down view of the chessboard with a cursor highlighting a piece" class="img-box">
+                    <span class="img-caption"></span>
+                </div>
+                <div class="img-wrapper">
+                    <img src="../images/voicechess/voicechess_3.png" alt="Sprite sheet of the chess pieces" class="img-box">
+                    <span class="img-caption"></span>
+                </div>
+            </div>
+        </div>
+
+        <!-- <p class="project-link"> -->
+        <!-- Link: <a href="#">thisisasamplelink.com/areyoustillreadingthis?=youdonthaveanythingelsetodo</a> -->
+        <!-- </p> -->
+    </main>
+
+    <!-- footer -->
+    <footer>
+        <div class="social-icons">
+
+        </div>
+        <p>All works © Ishaan Ahmed 2024. Please do not replicate without the expressed written consent of Ishaan Ahmed.</p>
+    </footer>
+
+    <!-- image lightbox / zoom modal -->
+    <div id="imgModal" class="modal">
+        <span class="close">&times;</span>
+        <div class="modal-inner">
+            <img class="modal-content" id="zoomedImage">
+            <p class="modal-caption" id="modalCaption"></p>
+        </div>
+    </div>
+
+    <script src="projects.js"></script>
+
+</body>
+</html>

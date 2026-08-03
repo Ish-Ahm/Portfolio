@@ -12,7 +12,7 @@ html {
 
 /* Body base styles */
 body {
-    font-family: 'Instrument Sans', sans-serif;
+    font-family: 'Instrument Sans', sans-serif !important;
     line-height: 1.6;
     background-color: #fafafa;
     color: #333;
@@ -64,6 +64,10 @@ header {
 
 /* Change location of image when screen size small */
 @media (max-width: 800px) {
+    .header-container {
+        padding-left: 0; /* desktop-only spacing reserved for the absolute-positioned logo */
+    }
+
     .header-logo {
         display: block;
         margin: 0 auto;  /* centers the image horizontally */
@@ -83,7 +87,7 @@ header {
 }
 
 .nav-list a {
-    font-family: 'Instrument Sans', sans-serif;
+    font-family: 'Instrument Sans', sans-serif !important;
     color: white;
     text-decoration: none;
     font-weight: 600;
@@ -112,6 +116,7 @@ header {
     .nav-list {
         display: none;
         flex-direction: column;
+        align-items: center;
         gap: 15px;
         position: absolute;
         top: 70px;
@@ -153,7 +158,7 @@ header {
 }
 
 .text-content h2 {
-    font-family: 'Britannica Gold', sans-serif;
+    font-family: 'Britannica Gold', sans-serif !important;
     font-weight: 400;
     font-size: 3rem;
     margin-bottom: 1rem;
@@ -177,6 +182,10 @@ header {
 
 .highlight {
     color: #FF8412;
+}
+
+.name-break {
+    display: none; /* only forces a line break on mobile, see the 800px media query */
 }
 
 .profile-image {
@@ -236,12 +245,18 @@ header {
 
     .text-content {
         order: 0;
+        margin-left: 0;
     }
 
     .text-content h2 {
         font-size: 2.5rem;
         margin-top: 2rem;
         margin-bottom: 0.8rem;
+        margin-inline: 1.5rem;
+    }
+
+    .name-break {
+        display: block;
     }
     
     .text-content p {
@@ -267,7 +282,7 @@ header {
 
 /* Pixel-style font for ABOUT ME title */
 .about-me-section > .about-title {
-    font-family: 'Britannica Gold', sans-serif; /* pixel font */
+    font-family: 'Britannica Gold', sans-serif !important; /* pixel font */
     font-size: 3rem;
     color: #FF8412; /* orange */
     text-shadow: 0px 4px 0px #000000;
@@ -348,7 +363,7 @@ header {
 }
 
 .projects-section > .projects-title {
-    font-family: 'Britannica Gold', sans-serif;
+    font-family: 'Britannica Gold', sans-serif !important;
     font-size: 3rem;
     font-weight: normal;
     color: #000000;
@@ -363,61 +378,160 @@ header {
     margin-bottom: 30px;
 }
 
-.project-title + .project-category {
+/* responsive tile grid: column count adjusts automatically with viewport width */
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
-.projects-section > .project-category {
-    background: #222;
-    border-radius: 20px;
-    padding: 0.8rem 1.2rem 1.5rem 1.2rem;
-    margin-bottom: 2rem;
-    box-shadow: 0 4px 16px rgba(0,0,0,0.12);
-    max-width: 120%;
-}
-
-.project-category h3 {
-    font-family: 'Instrument Sans', sans-serif;
-    font-weight: 700;
-    text-shadow: 0px 2px 0px #000000;
-    color: #fff;
-    text-align: center;
-    font-size: 1.7rem;
-    margin-bottom: 1rem;
-}
-
-.project-category a {
-    font-family: 'Instrument Sans', sans-serif;
-    color: white;
+.project-tile {
+    position: relative;
+    display: block;
     text-decoration: none;
-    font-weight: 600;
-    font-size: 1.5rem;
+    color: inherit;
+    border-radius: 16px;
+    overflow: hidden;
+    background: #222;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+    transition: box-shadow 0.2s ease;
 }
 
-.project-category a:hover {
-    color: #FF8412;
-}
-
-.project-category > .project-gallery {
-    display: flex;
-    justify-content: center;
-    gap: 1.5rem;
-    flex-wrap: wrap;
-}
-
-.project-gallery img {
-    width: 300px;
-    height: 200px;
-    object-fit: cover;
-    border-radius: 12px;
-    background: #111;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.18);
-    transition: transform 0.2s, box-shadow 0.2s;
-}
-
-.project-gallery img:hover {
-    transform: scale(1.05);
+.project-tile:hover {
     box-shadow: 0 0 2rem rgba(255,132,18,0.50);
+}
+
+.project-tile-image {
+    aspect-ratio: 4 / 3;
+    overflow: hidden;
+    background: #111;
+}
+
+.project-tile-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* translucent overlay on top of the image, title + description fade in on hover */
+.project-tile-caption {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 1.5rem;
+    background: rgba(0, 0, 0, 0.65);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.project-tile:hover .project-tile-caption {
+    opacity: 1;
+}
+
+.project-tile-caption h3 {
+    font-family: 'Instrument Sans', sans-serif !important;
+    font-weight: 700;
+    color: #fff;
+    font-size: 1.4rem;
+    margin-bottom: 0.5rem;
+}
+
+.project-tile-caption p {
+    color: #eee;
+    font-size: 0.95rem;
+    line-height: 1.4;
+    max-width: 90%;
+}
+
+/* larger caption text on phone widths for readability */
+@media (max-width: 800px) {
+    .project-tile-caption h3 {
+        font-size: 1.7rem;
+    }
+
+    .project-tile-caption p {
+        font-size: 1.2rem;
+    }
+}
+
+
+/* -------- MODAL (image lightbox / zoom) -------- */
+.modal {
+    display: none; /* hidden by default */
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.85);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.modal.active {
+    display: flex;
+    opacity: 1;
+}
+
+/* wraps the zoomed image and its caption so they scale in together */
+.modal-inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 90vw;
+    max-height: 90vh;
+    transform: scale(0.85);
+    transition: transform 0.3s ease;
+}
+
+.modal.active .modal-inner {
+    transform: scale(1);
+}
+
+/* zoomed image: object-fit: contain keeps the full image visible at its natural aspect ratio */
+.modal-content {
+    display: block;
+    max-width: 90vw;
+    max-height: 80vh;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    border-radius: 10px;
+}
+
+.modal-caption {
+    margin-top: 1rem;
+    padding: 0.6rem 1rem;
+    background: rgba(0, 0, 0, 0.6);
+    border-radius: 6px;
+    color: #fff;
+    font-size: 1.1rem;
+    text-align: center;
+}
+
+.close {
+    position: absolute;
+    top: 20px;
+    right: 35px;
+    color: white;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.close:hover {
+    color: #ccc;
 }
 
 

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<div id="top"></div>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Page</title>
+    <link rel="stylesheet" href="projects.css">
+</head>
+
+<body>
+
+    <!-- HEADER / NAVBAR -->
+    <header>
+        <div class="header-container">
+            <a href="../index.html">
+                <img src="../images/logo.png" alt="Logo" class="header-logo"/>
+            </a>
+            <nav>
+                <ul class="nav-list" id="nav-list">
+                    <li><a href="../index.html#aboutme">About Me</a></li>
+                    <li><a href="../index.html#projects">Projects</a></li>
+                    <li><a href="https://www.linkedin.com/in/ishaan-ahmed-" target="_blank">LinkedIn</a></li>
+                    <li><a href="https://drive.google.com/file/d/16GE38jJM7ZiMNmo-ROsJmO9TjHRUJi5x/view?usp=sharing" target="_blank">Resume</a></li>
+                </ul>
+                <div class="burger" id="burger">
+                    ☰
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- MAIN CONTENT (with project name, description, and images -->
+    <main class="project-container">
+        <h1>Trash Sorting Card Game</h1>
+        <p>
+            <br>
+            For a group project, I co-designed and developed a physical card game called Sort It!, a recycling-themed card game built around the waste sorting categories used in Enschede, the Netherlands. The game supports multiple players and plays similarly to Uno, where players match cards by trash type or number and must correctly name the category aloud before playing. It was designed to be both engaging and educational, teaching real-world recycling habits practiced within Netherlands through gameplay.
+            <br><br>
+            The game features 158 cards across seven trash types, including special action cards and wild cards with unique mechanics like Draw 1, Skip, Reverse, Peek, Transform, and Raccoon. A Trash Can card system adds a layer of strategy by unlocking additional discard piles as the game progresses. The manual, card designs, and visual identity were all produced as part of the project by the team.
+        </p>
+
+        <!-- Repeat this "text + image batch" block for each group of images. Copy the whole
+             .project-block div (text paragraph + image-grid) to add another batch further down. -->
+        <div class="project-block">
+            <div class="image-grid">
+                <div class="img-wrapper">
+                    <img src="../images/trashgame/trash_1.png" alt="Top down view of the card game being played" class="img-box">
+                    <span class="img-caption"></span>
+                </div>
+                <div class="img-wrapper">
+                    <img src="../images/trashgame/trash_2.png" alt="Stacks of cards representing different waste categories" class="img-box">
+                    <span class="img-caption"></span>
+                </div>
+                <div class="img-wrapper">
+                    <img src="../images/trashgame/trash_3.png" alt="Cover and logo for the game (AI generated for prototyping purposes)" class="img-box">
+                    <span class="img-caption"></span>
+                </div>
+            </div>
+        </div>
+
+        <!-- <p class="project-link"> -->
+        <!-- Link: <a href="#">thisisasamplelink.com/areyoustillreadingthis?=youdonthaveanythingelsetodo</a> -->
+        <!-- </p> -->
+    </main>
+
+    <!-- footer -->
+    <footer>
+        <div class="social-icons">
+
+        </div>
+        <p>All works © Ishaan Ahmed 2024. Please do not replicate without the expressed written consent of Ishaan Ahmed.</p>
+    </footer>
+
+    <!-- image lightbox / zoom modal -->
+    <div id="imgModal" class="modal">
+        <span class="close">&times;</span>
+        <div class="modal-inner">
+            <img class="modal-content" id="zoomedImage">
+            <p class="modal-caption" id="modalCaption"></p>
+        </div>
+    </div>
+
+    <script src="projects.js"></script>
+
+</body>
+</html>

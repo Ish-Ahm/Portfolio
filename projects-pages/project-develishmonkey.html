@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<div id="top"></div>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Page</title>
+    <link rel="stylesheet" href="projects.css">
+</head>
+
+<body>
+
+    <!-- HEADER / NAVBAR -->
+    <header>
+        <div class="header-container">
+            <a href="../index.html">
+                <img src="../images/logo.png" alt="Logo" class="header-logo"/>
+            </a>
+            <nav>
+                <ul class="nav-list" id="nav-list">
+                    <li><a href="../index.html#aboutme">About Me</a></li>
+                    <li><a href="../index.html#projects">Projects</a></li>
+                    <li><a href="https://www.linkedin.com/in/ishaan-ahmed-" target="_blank">LinkedIn</a></li>
+                    <li><a href="https://drive.google.com/file/d/16GE38jJM7ZiMNmo-ROsJmO9TjHRUJi5x/view?usp=sharing" target="_blank">Resume</a></li>
+                </ul>
+                <div class="burger" id="burger">
+                    ☰
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- MAIN CONTENT (with project name, description, and images -->
+    <main class="project-container">
+        <h1>Game Jam - Develish Monkey</h1>
+        <p>
+            The game was developed as part of a game jam, where I collaborated with a team to create a fun and engaging experience within a tight timeframe. Tools like Aseprite (for pixel art) and Unity (for game development) were used to bring the concept to life. The game features a unique mechanic where players control a mischievous monkey navigating through various levels, solving puzzles, and avoiding obstacles.
+            <br><br>
+            The project involved rapid prototyping, iterative design, and playtesting to refine the gameplay and ensure a smooth user experience. The art style was chosen to be vibrant and appealing, enhancing the overall aesthetic of the game. Sound effects and music were also incorporated to create an immersive environment for players.
+        </p>
+
+        <!-- Repeat this "text + image batch" block for each group of images. Copy the whole
+             .project-block div (text paragraph + image-grid) to add another batch further down. -->
+        <div class="project-block">
+            <div class="image-grid">
+                <div class="img-wrapper">
+                    <img src="../images/develishmonkey/develishmonkey_1.png" alt="Image 1" class="img-box">
+                    <span class="img-caption"></span>
+                </div>
+                <div class="img-wrapper">
+                    <img src="../images/develishmonkey/develishmonkey_2.png" alt="Image 2" class="img-box">
+                    <span class="img-caption"></span>
+                </div>
+                <div class="img-wrapper">
+                    <img src="../images/develishmonkey/develishmonkey_3.png" alt="Image 3" class="img-box">
+                    <span class="img-caption"></span>
+                </div>
+                <div class="img-wrapper">
+                    <img src="../images/develishmonkey/develishmonkey_4.png" alt="Image 4" class="img-box">
+                    <span class="img-caption"></span>
+                </div>
+                <div class="img-wrapper">
+                    <img src="../images/develishmonkey/develishmonkey_5.png" alt="Image 5" class="img-box">
+                    <span class="img-caption"></span>
+                </div>
+            </div>
+        </div>
+
+        <!-- <p class="project-link"> -->
+        <!-- Link: <a href="#">thisisasamplelink.com/areyoustillreadingthis?=youdonthaveanythingelsetodo</a> -->
+        <!-- </p> -->
+    </main>
+
+    <!-- footer -->
+    <footer>
+        <div class="social-icons">
+
+        </div>
+        <p>All works © Ishaan Ahmed 2024. Please do not replicate without the expressed written consent of Ishaan Ahmed.</p>
+    </footer>
+
+    <!-- image lightbox / zoom modal -->
+    <div id="imgModal" class="modal">
+        <span class="close">&times;</span>
+        <div class="modal-inner">
+            <img class="modal-content" id="zoomedImage">
+            <p class="modal-caption" id="modalCaption"></p>
+        </div>
+    </div>
+
+    <script src="projects.js"></script>
+
+</body>
+</html>

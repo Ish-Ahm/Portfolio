@@ -18,6 +18,17 @@
             <a href="../index.html">
                 <img src="../images/logo.png" alt="Logo" class="header-logo"/>
             </a>
+            <nav>
+                <ul class="nav-list" id="nav-list">
+                    <li><a href="../index.html#aboutme">About Me</a></li>
+                    <li><a href="../index.html#projects">Projects</a></li>
+                    <li><a href="https://www.linkedin.com/in/ishaan-ahmed-" target="_blank">LinkedIn</a></li>
+                    <li><a href="https://drive.google.com/file/d/16GE38jJM7ZiMNmo-ROsJmO9TjHRUJi5x/view?usp=sharing" target="_blank">Resume</a></li>
+                </ul>
+                <div class="burger" id="burger">
+                    ☰
+                </div>
+            </nav>
         </div>
     </header>
 
@@ -29,10 +40,28 @@
             These models were made for various purposes such as university projects, persona projects like games developed etc.
         </p>
 
-        <div class="image-grid">
-            <img src="../images/3d/3d_1.png" alt="Image 1" class="img-box" onclick="openImage(this)">
-            <img src="../images/3d/3d_2.png" alt="Image 2" class="img-box" onclick="openImage(this)">
-            <img src="../images/3d/3d_3.png" alt="Image 3" class="img-box" onclick="openImage(this)">
+        <!-- Repeat this "text + image batch" block for each group of images. Copy the whole
+             .project-block div (text paragraph + image-grid) to add another batch further down. -->
+        <div class="project-block">
+            <div class="image-grid">
+                <div class="img-wrapper">
+                    <video src="../images/3d/3d_robot_vid.mp4" class="img-box" muted preload="metadata" data-caption="Render of a spider-robot with an animation for walking realistically"></video>
+                    <span class="play-icon">&#9658;</span>
+                    <span class="img-caption"></span>
+                </div>
+                <div class="img-wrapper">
+                    <img src="../images/3d/3d_2.png" alt="3D printed Base for a minecraft torch lamp, made in Fusion 360 using plywood and acrylic sheets" class="img-box">
+                    <span class="img-caption"></span>
+                </div>
+                <div class="img-wrapper">
+                    <img src="../images/3d/3d_3.png" alt="3D printed wireframe of a globe, made in Blender and printed to be used as a lamp" class="img-box">
+                    <span class="img-caption"></span>
+                </div>
+                <div class="img-wrapper">
+                    <img src="../images/3d/3d_4.png" alt="3D print of a holder for our fitness step tracking device, made in Blender" class="img-box">
+                    <span class="img-caption"></span>
+                </div>
+            </div>
         </div>
 
         <!-- <p class="project-link"> -->
@@ -47,6 +76,16 @@
         </div>
         <p>All works © Ishaan Ahmed 2024. Please do not replicate without the expressed written consent of Ishaan Ahmed.</p>
     </footer>
+
+    <!-- image lightbox / zoom modal -->
+    <div id="imgModal" class="modal">
+        <span class="close">&times;</span>
+        <div class="modal-inner">
+            <img class="modal-content" id="zoomedImage">
+            <video class="modal-content" id="zoomedVideo" controls></video>
+            <p class="modal-caption" id="modalCaption"></p>
+        </div>
+    </div>
 
     <script src="projects.js"></script>
 

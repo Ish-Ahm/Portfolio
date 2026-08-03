@@ -37,14 +37,14 @@
         <!-- INTRO SECTION (with image and text) -->
         <section class="intro-section">
             <div class="text-content">
-                <h2>Hi, my name is <span class="highlight">Ishaan Ahmed</span>.</h2>
+                <h2>Hi, my name is<br class="name-break"> <span class="highlight">Ishaan Ahmed</span>.</h2>
                 <p>
-                    I am a student learning to be a graphic designer, UI/UX designer, 3D modeler and photo editor.
+                    I am a graduate in Creative Technology with a strong foundation in graphic design, UI/UX design, 3D modelling, and photo editing.
                 </p>
                 
                 <p>
-                    I am detail-oriented, dedicated to excellence, and passionate about exploring technological innovations and their impact on the world throughout history.        </p>
-                <p>
+                    Detail-oriented and committed to delivering high-quality work, with a keen interest in how technological innovations have shaped and continue to influence the world.
+                </p>
             </div>
 
             <div class="profile-image">
@@ -70,43 +70,105 @@
             </div>
         </section>
 
-        <!-- PROJECTS SECTION (with categories and image galleries) -->
+        <!-- PROJECTS SECTION (one tile per project; title + description reveal on hover) -->
+
         <section class="projects-section" id="projects">
             <h2 class="projects-title">PROJECTS</h2>
-            
-            <div class="project-category">
-                <h3><a href="projects-pages/project-graphicdesign.html">Graphic Design</a></h3>
-                <div class="project-gallery">
-                    <img src="images/graphic/graphic_1.png" alt="Graphic Design 1">
-                    <img src="images/graphic/graphic_2.png" alt="Graphic Design 2">
-                    <img src="images/graphic/graphic_3.png" alt="Graphic Design 3">
-                </div>
-            </div>
 
-            <div class="project-category">
-                <h3><a href="projects-pages\project-3dmodelling.html">3D Modelling</a></h3>
-                <div class="project-gallery">
-                    <img src="images/3d/3d_1.png" alt="3D Model 1">
-                    <img src="images/3d/3d_2.png" alt="3D Model 2">
-                    <img src="images/3d/3d_3.png" alt="3D Model 3">
-                </div>
-            </div>
+            <div class="project-grid">
+                <a class="project-tile" href="projects-pages/project-graphicdesign.html">
+                    <div class="project-tile-image">
+                        <img src="images/graphic/graphic_1.png" alt="Custom tarot cards designed for a university personal project">
+                    </div>
+                    <div class="project-tile-caption">
+                        <h3>Graphic Design</h3>
+                        <p>A collection of design work across branding, UI, and print.</p>
+                    </div>
+                </a>
 
-            <div class="project-category">
-                <h3><a href="projects-pages/project-aidevelopment.html">AI Development</a></h3>
-                <div class="project-gallery">
-                    <img src="images/ai/ai_1.png" alt="AI Development 1">
-                    <img src="images/ai/ai_2.png" alt="AI Development 2">
-                    <img src="images/ai/ai_3.png" alt="AI Development 3">
-                </div>
+                <a class="project-tile" href="projects-pages/project-3dmodelling.html">
+                    <div class="project-tile-image">
+                        <img src="images/3d/3d_1.png" alt="3D printed wireframe of a globe, made in Blender and printed to be used as a lamp">
+                    </div>
+                    <div class="project-tile-caption">
+                        <h3>3D Modelling</h3>
+                        <p>3D models and prints created in Blender and Fusion 360.</p>
+                    </div>
+                </a>
+
+                <a class="project-tile" href="projects-pages/project-aidevelopment.html">
+                    <div class="project-tile-image">
+                        <img src="images/ai/ai_2.png" alt="AI Learning Assistant">
+                    </div>
+                    <div class="project-tile-caption">
+                        <h3>AI Learning Assistant</h3>
+                        <p>An AI-powered learning assistant designed to provide personalized learning through a Socratic approach.</p>
+                    </div>
+                </a>
+
+                <a class="project-tile" href="projects-pages/project-voicechess.html">
+                    <div class="project-tile-image">
+                        <img src="images/voicechess/voicechess_2.png" alt="Example of the game being played between 2 players">
+                    </div>
+                    <div class="project-tile-caption">
+                        <h3>Voice-based Chess</h3>
+                        <p>A voice-controlled chess game using real-time speech recognition.</p>
+                    </div>
+                </a>
+
+                <a class="project-tile" href="projects-pages/project-steptracker.html">
+                    <div class="project-tile-image">
+                        <img src="images/steptracker/steptracker_1.png" alt="Fitness Step Tracker">
+                    </div>
+                    <div class="project-tile-caption">
+                        <h3>Fitness Step Tracker</h3>
+                        <p>A wearable step tracker built with a custom 3D-printed enclosure for promoting physical activity in the workplace.</p>
+                    </div>
+                </a>
+
+                <a class="project-tile" href="projects-pages/project-develishmonkey.html">
+                    <div class="project-tile-image">
+                        <img src="images/develishmonkey/develishmonkey_2.png" alt="Game Jam - Develish Monkey">
+                    </div>
+                    <div class="project-tile-caption">
+                        <h3>Game Jam - Develish Monkey</h3>
+                        <p>Game co-designed and programmed using Unity in C#, Aseprite for the art, and custom frameworks.</p>
+                    </div>
+                </a>
+
+                <a class="project-tile" href="projects-pages/project-trashsortinggame.html">
+                    <div class="project-tile-image">
+                        <img src="images/trashgame/trash_3.png" alt="Top down view of the card game">
+                    </div>
+                    <div class="project-tile-caption">
+                        <h3>Trash Sorting Card Game</h3>
+                        <p>A recycling-themed card game teaching real-world waste sorting habits.</p>
+                    </div>
+                </a>
+
+                <a class="project-tile" href="projects-pages/project-fastfashion.html">
+                    <div class="project-tile-image">
+                        <img src="images/fastfashion/fastfashion_1.png" alt="The Impact of Fast Fashion on Climate Change">
+                    </div>
+                    <div class="project-tile-caption">
+                        <h3>The Climate Toll of the Fashion Life Cycle</h3>
+                        <p>Interactive installation taking you through the journey that different types of textiles take over their lifetime.</p>
+                    </div>
+                </a>
             </div>
         </section>
     </main>
 
-    <!-- FOOTER SECTION -->
-    <footer>
-        <p>&copy; 2025 Ishaan Ahmed. All rights reserved.</p>
-    </footer>
+    <!-- image lightbox / zoom modal -->
+    <div id="imgModal" class="modal">
+        <span class="close">&times;</span>
+        <div class="modal-inner">
+            <img class="modal-content" id="zoomedImage">
+            <p class="modal-caption" id="modalCaption"></p>
+        </div>
+    </div>
+
+    <script src="lightbox.js"></script>
 
 </body>
 </html>
