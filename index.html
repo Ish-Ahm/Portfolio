@@ -21,7 +21,6 @@
             </a>
             <nav>
                 <ul class="nav-list" id="nav-list">
-                    <li><a href="#aboutme">About Me</a></li>
                     <li><a href="#projects">Projects</a></li>
                     <li><a href="https://www.linkedin.com/in/ishaan-ahmed-" target="_blank">LinkedIn</a></li>
                     <li><a href="https://drive.google.com/file/d/16GE38jJM7ZiMNmo-ROsJmO9TjHRUJi5x/view?usp=sharing" target="_blank">Resume</a></li>
@@ -36,36 +35,105 @@
     <main>
         <!-- INTRO SECTION (with image and text) -->
         <section class="intro-section">
+            <div class="profile-image">
+                <img src="images/ishaan.png" alt="Ishaan Ahmed" />
+            </div>
+
             <div class="text-content">
                 <h2>Hi, my name is<br class="name-break"> <span class="highlight">Ishaan Ahmed</span>.</h2>
                 <p>
                     I am a graduate in Creative Technology with a strong foundation in graphic design, UI/UX design, 3D modelling, and photo editing.
                 </p>
-                
+
                 <p>
                     Detail-oriented and committed to delivering high-quality work, with a keen interest in how technological innovations have shaped and continue to influence the world.
                 </p>
             </div>
+        </section>
 
-            <div class="profile-image">
-                <img src="images/ishaan.png" alt="Ishaan Ahmed" />
+        <!-- SKILLS SECTION -->
+        <!--
+            To edit a skill:
+            1. Description: change the text inside .skill-description
+            2. Logo: drop the app's logo image into images/skill-images/ and set the <img class="skill-logo"> src
+               to point at it (e.g. images/skill-images/figma.svg). Until an image is added there, the broken
+               logo icon is hidden automatically and only the label text shows.
+            3. Colours: all cards share the site's orange accent, set once in styles.css (.skill-label background).
+               Add an inline background-color on an individual row to override it.
+        -->
+        <section class="skills-section" id="skills">
+            <h2 class="section-title">SKILLS</h2>
+
+            <div class="skill-grid">
+                <div class="skill-card">
+                    <div class="skill-label">
+                        <img class="skill-logo" src="images/skill-images/figma.svg" alt="" onerror="this.style.display='none'">
+                        <span>Figma</span>
+                    </div>
+                    <p class="skill-description">Used for designing UI/UX mockups, wireframes, and interactive prototypes.</p>
+                </div>
+
+                <div class="skill-card">
+                    <div class="skill-label">
+                        <img class="skill-logo" src="images/skill-images/canva.svg" alt="" onerror="this.style.display='none'">
+                        <span>Canva</span>
+                    </div>
+                    <p class="skill-description">Used for quick graphic design work, including social media graphics and presentation materials.</p>
+                </div>
+
+                <div class="skill-card">
+                    <div class="skill-label">
+                        <img class="skill-logo" src="images/skill-images/photoshop.svg" alt="" onerror="this.style.display='none'">
+                        <span>Photoshop</span>
+                    </div>
+                    <p class="skill-description">Used for photo editing, retouching, and creating custom textures for design and 3D projects.</p>
+                </div>
+
+                <div class="skill-card">
+                    <div class="skill-label">
+                        <img class="skill-logo" src="images/skill-images/illustrator.svg" alt="" onerror="this.style.display='none'">
+                        <span>Illustrator</span>
+                    </div>
+                    <p class="skill-description">Used for vector illustration, logo design, and print-ready artwork.</p>
+                </div>
+
+                <div class="skill-card">
+                    <div class="skill-label">
+                        <img class="skill-logo" src="images/skill-images/blender.svg" alt="" onerror="this.style.display='none'">
+                        <span>Blender</span>
+                    </div>
+                    <p class="skill-description">Used for 3D modelling, texturing, and rendering, including the tarot card and globe lamp projects.</p>
+                </div>
+
+                <div class="skill-card">
+                    <div class="skill-label">
+                        <img class="skill-logo" src="images/skill-images/fusion360.svg" alt="" onerror="this.style.display='none'">
+                        <span>Fusion 360</span>
+                    </div>
+                    <p class="skill-description">Used for parametric 3D modelling and preparing designs for 3D printing.</p>
+                </div>
             </div>
         </section>
 
-        <section class="about-me-section" id="aboutme">
-            <div class="about-title">
-                ABOUT ME
-            </div>
-            
-            <div class="about-content">
-                <div class="about-content-skills">
-                    <h3>Skills</h3>
-                    <p>Graphic designing (Figma, Canva, Photoshop, Illustrator), 3D Modelling (Blender, Fusion 360, AutoCAD, SketchUp), Proficient in MS applications like Word and Excel.</p>
+        <!-- LANGUAGES SECTION -->
+        <!-- To edit a language's level, change the text inside .language-level (e.g. "Naturally Fluent", "Beginner") -->
+        <section class="languages-section" id="languages">
+            <h2 class="section-title">LANGUAGES</h2>
+
+            <div class="language-grid">
+                <div class="language-tile">
+                    <span class="language-level">Naturally Fluent</span>
+                    <h3>English</h3>
                 </div>
 
-                <div class="about-content-languages">
-                    <h3>Languages</h3>
-                    <p>Naturally fluent in English and Hindi, currently learning Dutch</p>
+                <div class="language-tile">
+                    <span class="language-level">Naturally Fluent</span>
+                    <h3>Hindi</h3>
+                </div>
+
+                <div class="language-tile">
+                    <span class="language-level">Beginner</span>
+                    <h3>Dutch</h3>
                 </div>
             </div>
         </section>
