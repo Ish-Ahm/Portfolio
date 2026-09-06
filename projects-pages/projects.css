@@ -149,8 +149,9 @@ main.project-container {
 
 .project-container h1 {
     font-family: 'Britannica Gold', sans-serif;
-    color: #2A2A2A;
-    font-weight: 600;
+    color: #000000;
+    letter-spacing: 2px;
+    font-weight: 400;
     font-size: 3rem;
     margin-top: 2rem;
     margin-bottom: 15px;
